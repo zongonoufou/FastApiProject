@@ -7,7 +7,7 @@ import os
 
 from pathlib import Path
 
-env_path = Path(__file__).parent / '.env'   # suppose que .env est dans le même dossier que database.py
+env_path = Path(__file__).parent / '.env' 
 load_dotenv(dotenv_path=env_path)
 
 SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL")
