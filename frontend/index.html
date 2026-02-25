@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des utilisateurs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gestion des utilisateurs</h1>
+
+        <!-- Formulaire d'ajout -->
+        <div class="form-container">
+            <h2>Ajouter un utilisateur</h2>
+            <form id="userForm">
+                <div class="form-group">
+                    <label for="name">Nom :</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="age">Âge :</label>
+                    <input type="number" id="age" name="age" min="1" required>
+                </div>
+                <button type="submit">Ajouter</button>
+            </form>
+            <div id="formMessage" class="message"></div>
+        </div>
+
+        <!-- Liste des utilisateurs -->
+        <div class="list-container">
+            <h2>Liste des utilisateurs</h2>
+            <button id="refreshBtn">Rafraîchir</button>
+            <div id="userList" class="user-list">
+                <!-- Les utilisateurs seront injectés ici -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
