@@ -143,8 +143,6 @@ def create_profile_for_user(user_id: int, profile: schemas.ProfileCreate, db: Se
 
 
 
-# ... (après vos endpoints existants)
-
 @app.patch("/users/{user_id}", response_model=schemas.User, tags=["Users"])
 def patch_user(user_id: int, user_update: schemas.UserUpdate, db: Session = Depends(get_db)):
     """Mise à jour partielle d'un utilisateur (ex: is_active)"""
@@ -156,7 +154,7 @@ def delete_user(user_id: int, db: Session = Depends(get_db)):
     result = crud.delete_user(db, user_id)
     return {"message": "Utilisateur supprimé avec succès"}
 
-   
+# route pour les stats   
 @app.get("/stats/")
 def get_stats(db: Session = Depends(get_db)):
     total_users = db.query(models.User).count()
